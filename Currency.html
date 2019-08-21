@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <style>
+        #txtAmount {
+            border: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<form>
+    Amount :
+    <input name ="txtAmount" type="text" class = "txtAmount"/>
+
+    <select name="FormCurrency">
+        <option value="VND">Viet Nam</option>
+        <option value="USD">United State</option>
+    </select>
+
+    <select name="ToCurrency">
+        <option value="VND">Viet Nam</option>
+        <option value="USD">United State</option>
+    </select>
+
+    <button type="button" onclick="calculate();">Convert</button>
+    <label name ="lblResult"></label>
+</form>
+<script>
+    function calculate() {
+        let a = document.getElementById("txtAmount");
+        alert(a.value);
+        //document.getElementsByClassName("");
+        //txtAmount[0].value;
+    }
+</script>
+</body>
+</html>
