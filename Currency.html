@@ -5,34 +5,47 @@
     <title>Hello</title>
     <style>
         #txtAmount {
-            border: aquamarine;
+            border: 2px solid aquamarine;
         }
     </style>
 </head>
 <body>
 <form>
     Amount :
-    <input name ="txtAmount" type="text" class = "txtAmount"/>
+    <input id ="txtAmount" type="text" class = "txtAmount"/>
 
-    <select name="FormCurrency">
-        <option value="VND">Viet Nam</option>
-        <option value="USD">United State</option>
+    <select id ="FormCurrency">
+        <option value="VND" >Viet Nam</option>
+        <option value="USD" >United State</option>
     </select>
 
-    <select name="ToCurrency">
-        <option value="VND">Viet Nam</option>
-        <option value="USD">United State</option>
+    <select id ="ToCurrency">
+        <option value="VND"  >Viet Nam</option>
+        <option value="USD"  >United State</option>
     </select>
 
     <button type="button" onclick="calculate();">Convert</button>
     <label name ="lblResult"></label>
+    <p id ="Result"></p>
 </form>
 <script>
     function calculate() {
-        let a = document.getElementById("txtAmount");
-        alert(a.value);
+        let a = document.getElementById("txtAmount").value;
+
         //document.getElementsByClassName("");
         //txtAmount[0].value;
+
+        let cur1 = document.getElementById("FormCurrency").value;
+        let cur2 = document.getElementById("ToCurrency").value;
+
+        if (cur1 === 'USD' && cur2 === 'VND'){
+            document.getElementById("Result").innerHTML = "Result: " + a * 25000 +' VND';
+             alert("Here is your currency in USA: " +money + "US");
+        } else if (cur1 === 'VND' && cur2 == 'USD'){
+            document.getElementById("Result").innerHTML="Result: " + a/25000 +' USD';
+            alert("Here is your currency in VND: " +money + " VND");
+        }else
+            alert("Error!");
     }
 </script>
 </body>
